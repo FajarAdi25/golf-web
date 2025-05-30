@@ -315,22 +315,24 @@ export const NavbarNew = () => {
             </div>
 
             <div className="fixed top-[12rem] right-4 z-[100]">
-              <div className="w-[65px] bg-transparent border-none -mt-4">
-                <ul className="grid gap-0.5">
-                  {moreMenuItems.map((item) => (
-                    <li key={item.id}>
-                      <Button
-                        variant="ghost"
-                        size="xs"
-                        className="w-full justify-start text-left rounded-none bg-green-700 text-xs"
-                        onClick={() => navigateAndCollapse(item.href)}
-                      >
-                        {item.label}
-                      </Button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {!pathname.includes("course-detail") && (
+                <div className="w-[65px] bg-transparent border-none -mt-4">
+                  <ul className="grid gap-0.5">
+                    {moreMenuItems.map((item) => (
+                      <li key={item.id}>
+                        <Button
+                          variant="ghost"
+                          size="xs"
+                          className="w-full justify-start text-left rounded-none bg-green-700 text-xs"
+                          onClick={() => navigateAndCollapse(item.href)}
+                        >
+                          {item.label}
+                        </Button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </header>
@@ -402,21 +404,23 @@ export const NavbarNew = () => {
                 </div>
               ))}
               <div className="fixed bottom-0 right-16 z-[100]">
-                <div className="w-[160px] bg-transparent border-none pr-1">
-                  <ul className="grid gap-1">
-                    {moreMenuItems.map((item) => (
-                      <li key={item.id}>
-                        <Button
-                          variant="ghost"
-                          className="w-full py-6 justify-start items-center text-lg text-left rounded-none bg-green-700 focus-visible:ring-0"
-                          onClick={() => navigateAndCollapse(item.href)}
-                        >
-                          {item.label}
-                        </Button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {!pathname.includes("course-detail") && (
+                  <div className="w-[160px] bg-transparent border-none pr-1">
+                    <ul className="grid gap-1">
+                      {moreMenuItems.map((item) => (
+                        <li key={item.id}>
+                          <Button
+                            variant="ghost"
+                            className="w-full py-6 justify-start items-center text-lg text-left rounded-none bg-green-700 focus-visible:ring-0"
+                            onClick={() => navigateAndCollapse(item.href)}
+                          >
+                            {item.label}
+                          </Button>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
           </div>
