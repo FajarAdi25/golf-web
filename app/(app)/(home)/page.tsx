@@ -19,7 +19,7 @@ export default function CompanyProfilePage() {
       <div className="hidden md:block md:h-auto md:-mt-6">
         <div className="w-full h-auto shadow-lg">
           <img
-            src="/bg-home-desktop.png"
+            src="/bg-home-desktop-2.png"
             alt="Golf course background"
             className="w-full h-full"
           />
